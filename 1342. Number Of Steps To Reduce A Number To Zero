@@ -1,0 +1,12 @@
+class Solution {
+    public static int countingSteps(int num, int count){
+        if(num==0)
+            return count;
+        if(num%2==0)
+            return countingSteps(num/2,count+1);
+        return countingSteps(num-1,count+1);
+    }
+    public int numberOfSteps(int num){
+        return countingSteps(num,0);
+    }
+}
